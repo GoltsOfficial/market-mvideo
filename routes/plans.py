@@ -9,12 +9,12 @@ _plans: dict[int, Plan] = {}
 _next_id: int = 1
 
 
-@router.get("palns", response_model=list[Plan])
+@router.get("/palns", response_model=list[Plan])
 def list_plans():
     return list(_plans.values())
 
 
-@router.post("plans", response_model=Plan, status_code=200)
+@router.post("/plans", response_model=Plan, status_code=200)
 def create_plan(payload: PlanCreate):
     global _next_id
 
