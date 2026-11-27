@@ -19,7 +19,8 @@ class Tags(Enum):
     "/palns",
     response_model=list[Plan],
     tags=[Tags.plans],
-    summary="Get all plans available"
+    summary="Get all plans available",
+    response_description="List of all plans available"
 )
 def list_plans():
     """
@@ -41,7 +42,8 @@ def list_plans():
     response_model=Plan,
     status_code=201,
     tags=[Tags.plans],
-    summary="Create a new plan"
+    summary="Create a new plan",
+    response_description="Created a new plan"
 )
 def create_plan(payload: PlanCreate):
     """
@@ -66,7 +68,8 @@ def create_plan(payload: PlanCreate):
     "/plans/{plan_id}",
     response_model=Plan,
     tags=[Tags.plans],
-    summary="Get a plan"
+    summary="Get a plan",
+    response_description="Get a plan of assigned **id**"
 )
 def get_plan(plan_id: int):
     """
@@ -89,7 +92,8 @@ def get_plan(plan_id: int):
     "/plans/{plan_id}",
     response_model=Plan,
     tags=[Tags.plans],
-    summary="Update a plan"
+    summary="Update a plan",
+    response_description="Updated a plan with assigned **id**"
 )
 def update_plan(plan_id: int, payload: PlanUpdate):
     """
@@ -125,7 +129,8 @@ def update_plan(plan_id: int, payload: PlanUpdate):
     "/plans/{plan_id}",
     status_code=204,
     tags=[Tags.plans],
-    summary="Delete a plan"
+    summary="Delete a plan",
+    response_description="Delete a plan of assigned **id**"
 )
 def delete_plan(plan_id: int):
     """
